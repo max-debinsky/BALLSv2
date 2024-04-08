@@ -19,7 +19,7 @@ struct sBall {
 
 		circle.setOrigin(radius, radius);
 		circle.setPosition(sf::Vector2f(_positionX, _positionY));
-		circle.setFillColor(sf::Color(rand() % 255, rand() % 255, 255, 255));
+		circle.setFillColor(sf::Color(rand() % 255, rand() % 255, rand() % 40 + 200.0f, 255));
 		circle.setRadius(radius);
 	}
 

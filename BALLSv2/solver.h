@@ -9,8 +9,12 @@ struct Solver {
 	std::vector<sBall> Balls;
 
 	void addBall(float positionX, float positionY) {
-		ballRadius = rand() % 30 + 5.0f;
+		ballRadius = (rand() % 10 + 5.0f);
 		Balls.emplace_back(ballRadius, positionX, positionY);
+	}
+
+	void removeBall() {
+		if(Balls.size() > 0) Balls.pop_back();
 	}
 
 	void update(float deltaTime, int steps) {

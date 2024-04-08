@@ -36,6 +36,9 @@ int main()
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
             solver.addBall(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y);
         }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::C)) {
+            solver.removeBall();
+        }
 
         deltaTime = clock.restart().asSeconds();
 
@@ -43,7 +46,7 @@ int main()
 
         window.draw(constraint);
 
-        solver.update(deltaTime, 10);
+        solver.update(deltaTime, 20);
         for (auto ball : solver.Balls) {
             ball.drawTo(window);
         }
